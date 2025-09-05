@@ -73,11 +73,8 @@ const filmes = [
     }
 ];
 
-
-// ----------------------
-// UTILITÁRIOS
-// ----------------------
 function getUsuario() {
+
     return localStorage.getItem('usuario') || 'Convidado';
 }
 
@@ -85,19 +82,25 @@ function getChaveFilmesUsuario() {
     return `filmesAssistidos_${getUsuario()}`;
 }
 
-function atualizarNavbar() {
-    const navLogin = document.getElementById('nav-login');
-    const navLogout = document.getElementById('nav-logout');
-    const logado = localStorage.getItem('logado') === 'true';
+// Navbar logic
+(function() {
+    var navLogin = document.getElementById('nav-login');
+    var navLogout = document.getElementById('nav-logout');
     if (navLogin && navLogout) {
+        var logado = localStorage.getItem('logado') === 'true';
         navLogin.style.display = logado ? 'none' : 'inline';
         navLogout.style.display = logado ? 'inline' : 'none';
+        navLogout.onclick = function() {
+            localStorage.removeItem('usuario');
+            localStorage.setItem('logado', 'false');
+            navLogin.style.display = 'inline';
+            navLogout.style.display = 'none';
+            window.location.href = 'login.html';
+        };
     }
-}
+})();
 
-// ----------------------
-// LOGIN
-// ----------------------
+// Login page logic
 const formLogin = document.getElementById('formLogin');
 if (formLogin) {
     formLogin.addEventListener('submit', (e) => {
@@ -110,32 +113,17 @@ if (formLogin) {
             return;
         }
 
-        // Salva login
         localStorage.setItem('usuario', usuario);
+
         localStorage.setItem('logado', 'true');
 
         alert(`Bem-vindo(a), ${usuario}!`);
-        atualizarNavbar();
+
         window.location.href = 'perfil.html';
     });
 }
 
-// ----------------------
-// LOGOUT
-// ----------------------
-const navLogout = document.getElementById('nav-logout');
-if (navLogout) {
-    navLogout.addEventListener('click', () => {
-        localStorage.removeItem('usuario');
-        localStorage.setItem('logado', 'false');
-        atualizarNavbar();
-        window.location.href = 'login.html';
-    });
-}
-
-// ----------------------
-// PERFIL
-// ----------------------
+// Perfil page logic
 function atualizarPerfil() {
     const profileUsername = document.getElementById('profile-username');
     const profileInfo = document.getElementById('profile-info');
@@ -160,9 +148,7 @@ function atualizarPerfil() {
 }
 atualizarPerfil();
 
-// ----------------------
-// DETALHES DO FILME (filmes.html)
-// ----------------------
+// Detalhes do filme (filmes.html)
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 const filme = filmes.find(f => f.id === movieId);
@@ -183,9 +169,7 @@ if (filme) {
     if (avaliacaoEl) avaliacaoEl.textContent = "⭐".repeat(filme.avaliacao);
 }
 
-// ----------------------
-// ADICIONAR E RANKEAR FILMES
-// ----------------------
+// Adicionar e rankear filmes
 const btnAdicionar = document.getElementById('adicionar');
 const btnRankear = document.getElementById('rankear');
 
@@ -226,9 +210,5 @@ if (btnRankear) {
         alert(`Você deu ${ranking} estrelas para ${filme.titulo}`);
         atualizarPerfil();
     });
-}
 
-// ----------------------
-// INICIALIZAÇÃO
-// ----------------------
-atualizarNavbar();
+}
