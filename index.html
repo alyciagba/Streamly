@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+      <title>Streamly</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <span style="font-size:2rem;font-weight:bold;letter-spacing:1px;">Streamly</span>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="login.html" id="nav-login">Login</a>
+            <a href="#" id="nav-logout">Logout</a>
+        </nav>
+    </header>
+
+    <main id="home">
+        <h2 style="text-align:center;font-size:2.5rem;font-weight:bold;margin-top:2rem;margin-bottom:2rem;">Seja bem-vindo ao Streamly!</h2>
+        <div id="filmes-container" class="movie-list">
+            <!-- Filme 1 -->
+            <div class="movie-card">
+                <img src="images/jovememchamas.jpg.avif" alt="Capa do filme">
+                <h3>Retrato de uma Jovem em Chamas</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=1'" class="detalhes">Detalhes</button>
+            </div>
+            <!-- Filme 2 -->
+            <div class="movie-card">
+                <img src="images/iluminado.png" alt="Capa do filme">
+                <h3>O Iluminado</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=2'" class="detalhes">Detalhes</button>
+            </div>
+            <!-- Filme 3 -->
+            <div class="movie-card">
+                <img src="images/blackswan.jpg.jpg" alt="Capa do filme">
+                <h3>Cisne Negro</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=3'" class="detalhes">Detalhes</button>
+            </div>
+            <!-- Filme 4 -->
+            <div class="movie-card">
+                <img src="images/Que_horas_ela_volta_ver3_xlg.jpg" alt="Capa do filme">
+                <h3>Que Horas Ela Volta?</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=4'" class="detalhes">Detalhes</button>
+            </div>
+            <!-- Filme 5 -->
+            <div class="movie-card">
+                <img src="images/prettywoman.jpg" alt="Capa do filme">
+                <h3>Uma Linda Mulher</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=5'" class="detalhes">Detalhes</button>
+            </div>
+            <!-- Filme 6 -->
+            <div class="movie-card">
+                <img src="images/brilhoeterno.jpg" alt="Capa do filme">
+                <h3>Brilho Eterno de uma Mente Sem Lembranças</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=6'" class="detalhes">Detalhes</button>
+            </div>
+            <!-- Filme 7 -->
+            <div class="movie-card">
+                <img src="images/kaguya.jpg" alt="Capa do filme">
+                <h3>O Conto da Princesa Kaguya</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=7'" class="detalhes">Detalhes</button>
+            </div>
+            <!-- Filme 8 -->
+            <div class="movie-card">
+                <img src="images/asubstanci.jpg.jpg" alt="Capa do filme">
+                <h3>A Substância</h3>
+                <div class="star-rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                </div>
+                <button onclick="window.location.href='filmes.html?id=8'" class="detalhes">Detalhes</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
