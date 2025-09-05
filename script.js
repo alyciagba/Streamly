@@ -128,10 +128,8 @@ function atualizarPerfil() {
     const profileUsername = document.getElementById('profile-username');
     const profileInfo = document.getElementById('profile-info');
     if (!profileUsername || !profileInfo) return;
-
     const usuario = getUsuario();
     profileUsername.textContent = usuario;
-
     const filmesAssistidos = JSON.parse(localStorage.getItem(getChaveFilmesUsuario())) || [];
     let html = '<h4>Filmes Assistidos:</h4><ul class="profile-movies">';
     if (filmesAssistidos.length === 0) {
@@ -146,7 +144,9 @@ function atualizarPerfil() {
     html += '</ul>';
     profileInfo.innerHTML = html;
 }
-atualizarPerfil();
+if (document.getElementById('profile-username') && document.getElementById('profile-info')) {
+    atualizarPerfil();
+}
 
 // Detalhes do filme (filmes.html)
 const urlParams = new URLSearchParams(window.location.search);
