@@ -119,7 +119,7 @@ if (formLogin) {
 
         alert(`Bem-vindo(a), ${usuario}!`);
 
-        window.location.href = 'perfil.html';
+        window.location.href = 'index.html';
     });
 }
 
@@ -193,7 +193,7 @@ if (btnRankear) {
     btnRankear.addEventListener('click', () => {
         if (!filme) return;
 
-        let ranking = parseInt(prompt("Dê uma nota de 1 a 5 estrelas ⭐:"));
+        let ranking = parseInt(prompt("Dê uma nota de 1 a 5 estrelas:"));
         if (!ranking || ranking < 1 || ranking > 5) {
             alert("Número inválido. Use de 1 a 5.");
             return;
