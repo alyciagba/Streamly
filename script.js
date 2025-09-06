@@ -82,7 +82,7 @@ function getChaveFilmesUsuario() {
     return `filmesAssistidos_${getUsuario()}`;
 }
 
-// Navbar logic
+// lógica de Navbar
 (function() {
     var navLogin = document.getElementById('nav-login');
     var navLogout = document.getElementById('nav-logout');
@@ -100,7 +100,7 @@ function getChaveFilmesUsuario() {
     }
 })();
 
-// Login page logic
+// lógica de login
 const formLogin = document.getElementById('formLogin');
 if (formLogin) {
     formLogin.addEventListener('submit', (e) => {
@@ -123,7 +123,7 @@ if (formLogin) {
     });
 }
 
-// Perfil page logic
+// lógica de perfil page
 function atualizarPerfil() {
     const profileUsername = document.getElementById('profile-username');
     const profileInfo = document.getElementById('profile-info');
